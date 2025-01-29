@@ -51,12 +51,12 @@ pipeline {
 
        stage('Deploy to Cloud Server')
         {
+            environment {
+                SERVER_IP = credentials('serverip')
+              }
             steps
              {
-             environment {
-                SERVER_IP = credentials('serverip') 
-              }
-             withCredentials([sshUserPrivateKey(credentialsId: 'sshkey', keyFileVariable: 'MY_SSH_KEY', usernameVariable: 'username')]) {
+              withCredentials([sshUserPrivateKey(credentialsId: 'sshkey', keyFileVariable: 'MY_SSH_KEY', usernameVariable: 'username')]) {
                     sh '''
                         ssh -i $MY_SSH_KEY -o StrictHostKeyChecking=no ${username}@${SERVER_IP} << EOF
                         docker pull aravindragu/my-flask-app:latest
