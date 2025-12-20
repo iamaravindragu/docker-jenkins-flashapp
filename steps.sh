@@ -11,7 +11,7 @@ User=ec2-user
 Group=ec2-user
 WorkingDirectory=/home/ec2-user/app/
 Environment="PATH=/home/ec2-user/app/venv/bin"
-ExecStart=/home/ec2-user/app/venv/bin/python3 /home/ec2-user/app/app.py
+ExecStart=/home/ec2-user/app/venv/bin/python3 /home/ec2-user/app/app.p
 
 [Install]
 WantedBy=multi-user.target
