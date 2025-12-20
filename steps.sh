@@ -1,5 +1,5 @@
 mkdir app
-python3 -m venv .venvv
+python3 -m venv .venv
 
 
 [Unit]
